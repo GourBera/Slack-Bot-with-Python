@@ -19,9 +19,6 @@ import json
 import simplejson as json
 
 
-if __name__ == '__main__':
-    pass
-    
 
 def postmsg(key, chnlname, msg):
     sc = SlackClient(key)
@@ -36,13 +33,15 @@ def get_chnl_list(key):
     print(channelList)
     
     
-#*************************************************************      
+    
 
 key = "xoxb-*********************************"
 chnlname = "*****" #general"
 msg = "test msg!!!!"
 
-postmsg(key, chnlname, msg)
+
+if __name__ == '__main__':
+    postmsg(key, chnlname, msg)
 
 
 
