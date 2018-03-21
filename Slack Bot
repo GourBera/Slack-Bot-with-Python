@@ -1,0 +1,48 @@
+'''
+Created on Mar 14, 2018
+@author: berag
+
+To Post your message in any Slack Channel as a BoT and from the response extract only the message text and reply back the same
+
+Prerequest :
+
+1. Slack channel Id
+2. Slack key
+3. Message text - to be posted   
+
+'''
+import slackclient
+import os
+import requests
+from slacker import Slacker
+import json
+import simplejson as json
+
+
+if __name__ == '__main__':
+    pass
+    
+
+def postmsg(key, chnlname, msg):
+    sc = SlackClient(key)
+    k = sc.api_call("chat.postMessage",channel=chnlname,text=msg)   
+    msg =  k['message']['text']
+    print("Your msg was: " + msg) 
+        
+    
+def get_chnl_list(key):
+    sc = SlackClient(key)
+    channelList = sc.api_call("channels.list")
+    print(channelList)
+    
+    
+#*************************************************************      
+
+key = "xoxb-*********************************"
+chnlname = "*****" #general"
+msg = "test msg!!!!"
+
+postmsg(key, chnlname, msg)
+
+
+
